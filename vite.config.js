@@ -30,8 +30,8 @@ export default defineConfig({
 			},
 
 			output: {
-				chunkFileNames: "js/[name]-[hash].js",
-				entryFileNames: "js/[name]-[hash].js",
+				chunkFileNames: "js/[name].js",
+				entryFileNames: "js/[name].js",
 
 				globals: {
 					jquery: "window.jQuery",
@@ -39,11 +39,11 @@ export default defineConfig({
 
 				assetFileNames: ({ name }) => {
 					if (/\.(gif|jpe?g|png|svg)$/.test(name ?? "")) {
-						return "images/[name]-[hash][extname]";
+						return "images/[name][extname]";
 					}
 
 					if (/\.css$/.test(name ?? "")) {
-						return "css/[name]-[hash][extname]";
+						return "css/[name][extname]";
 					}
 
 					// Fonts woff, woff2, eot, ttf
